@@ -1,32 +1,38 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector("#add-employees-btn");
 
-// Collect employee data
 const collectEmployees = function () {
-  // TODO: Get user input to create and return an array of employee objects
-
-  //array
   const employees = [];
-  let keepAdding = true;
 
-  while (keepAdding) {
-    //something for user input
-    let firstName = window.prompt("Please provide first name");
-    let lastName = window.prompt("Please provide your last name ");
-    let salary = window.prompt("Please provide your salary");
+  const employee = createEmployee();
+  employees.push(employee);
 
-    //objects for employees
-    const employeeObject = {
-      firstName: firstName,
-      lastName: lastName,
-      salary: salary,
-    };
-
-    employees.push(employeeObject);
-
-    keepAdding = window.confirm("Would you like to add another employee?");
+  while (confirm("Would you like to add another employee?")) {
+    employees.push(createEmployee);
   }
+
+  return employes;
 };
+
+function createEmployee() {
+  const employee = {
+    firstName: "",
+    lastName: "",
+    salary: 0,
+  };
+
+  employee.firstName = prompt("Employee's first name");
+  employee.lastName = prompt("Employee's last name");
+  employee.salary = prompt("Employee's salary");
+
+  if (isNaN(employee.salary)) {
+    employee.salary = 0;
+  } else {
+    employee.salary = parseInt(employee.salary);
+  }
+
+  return employee;
+}
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
@@ -79,7 +85,8 @@ const displayEmployees = function (employeesArray) {
   }
 };
 
-const trackEmployeeData = function () {
+const trackEmployeeData = function (event) {
+  event.preventDefault();
   const employees = collectEmployees();
 
   console.table(employees);
@@ -103,3 +110,30 @@ const trackEmployeeData = function () {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener("click", trackEmployeeData);
+
+// // Collect employee data
+// const collectEmployees = function () {
+//   // TODO: Get user input to create and return an array of employee objects
+
+//   //array
+//   const employees = [];
+//   let keepAdding = true;
+
+//   while (keepAdding) {
+//     //something for user input
+//     let firstName = window.prompt("Please provide first name");
+//     let lastName = window.prompt("Please provide your last name ");
+//     let salary = window.prompt("Please provide your salary");
+
+//     //objects for employees
+//     const employeeObject = {
+//       firstName: firstName,
+//       lastName: lastName,
+//       salary: salary,
+//     };
+
+//     employees.push(employeeObject);
+
+//     keepAdding = window.confirm("Would you like to add another employee?");
+//   }
+// };
