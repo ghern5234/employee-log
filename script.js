@@ -8,11 +8,16 @@ const collectEmployees = function () {
   employees.push(employee);
 
   while (confirm("Would you like to add another employee?")) {
-    employees.push(createEmployee);
+    //employees.push(createEmployee());
+    const employee = createEmployee();
+    employees.push(employee);
+    console.log(employees);
   }
 
-  return employes;
+  return employees;
 };
+
+//recursion function
 
 function createEmployee() {
   const employee = {
@@ -36,6 +41,25 @@ function createEmployee() {
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
+  console.log(
+    " this is the list of employees in displayAverageSalary function"
+  );
+  console.log(employeesArray);
+  let sumOfSalaries = 0;
+
+  for (var i = 0; i < employeesArray.length; i++) {
+    console.log(employeesArray[i]);
+    console.log(employeesArray[i].salary);
+
+    console.log(
+      `${sumOfSalaries}  + ${employeesArray[i].salary} = ${
+        sumOfSalaries + employeesArray[i].salary
+      }`
+    );
+    sumOfSalaries = sumOfSalaries + employeesArray[i].salary;
+  }
+
+  return sumOfSalaries / employeesArry[1].salary;
   // TODO: Calculate and display the average salary
 };
 
