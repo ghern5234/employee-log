@@ -11,7 +11,7 @@
 - Working on this project really pushed me to understand javascript at a molecular level. Being able to read what is actually happening was essential to solving the issues. This project really made things click.
 
 
-
+Live site: https://ghern5234.github.io/employee-log/
 
 
 ![alt text](assets/images/app-image.png)
