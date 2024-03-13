@@ -11,7 +11,7 @@ const collectEmployees = function () {
     //employees.push(createEmployee());
     const employee = createEmployee();
     employees.push(employee);
-    console.log(employees);
+    // console.log(employees);
   }
 
   return employees;
